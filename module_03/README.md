@@ -12,4 +12,5 @@
 
 # 通过 nsenter 进入容器查看 IP 配置
 >PID=$(docker inspect --format {{.State.Pid}} httpserver)
+
 >sudo nsenter -t $PID -n ip a
