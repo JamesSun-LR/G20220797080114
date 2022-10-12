@@ -11,5 +11,5 @@
 >docker run -d --restart=always -v /tmp:/tmp -p 8080:8080 --name="httpserver" hhsd/httpserver:v1.0
 
 # 通过 nsenter 进入容器查看 IP 配置
->PID=$(docker inspect --format {{.State.Pid}} <container_name_or_ID>)
+>PID=$(docker inspect --format {{.State.Pid}} httpserver)
 >sudo nsenter -t $PID -n ip a
